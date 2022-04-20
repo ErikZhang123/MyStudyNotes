@@ -19,6 +19,7 @@ public class hospital_user {
     private String userName;
     private Integer userAge;
     private String userEmail;
+
     @TableField(fill = FieldFill.INSERT)
     private Date createTime; // 表中会转换为 create_Time
     //如果仅仅写insert，在
