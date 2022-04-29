@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../Exception-09" />
+    <file type="web" url="file://$PROJECT_DIR$/../Forward_And_Redirect-08" />
+    <file type="web" url="file://$PROJECT_DIR$/../Forward_Redirct-08" />
+    <file type="web" url="file://$PROJECT_DIR$/../GetParameter" />
+    <file type="web" url="file://$PROJECT_DIR$/../GettingParameter-03" />
+    <file type="web" url="file://$PROJECT_DIR$" />
+    <file type="web" url="file://$PROJECT_DIR$/../HelloMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/../Path-06" />
+    <file type="web" url="file://$PROJECT_DIR$/../RequestMapping-02" />
+    <file type="web" url="file://$PROJECT_DIR$/../ReturnValue-04" />
+    <file type="web" url="file://$PROJECT_DIR$/../SSM_07" />
+    <file type="web" url="file://$PROJECT_DIR$/../StaticResource-05" />
+    <type id="Spring" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../RequestMapping-02/pom.xml" />
+        <option value="$PROJECT_DIR$/../GettingParameter-03/pom.xml" />
+        <option value="$PROJECT_DIR$/../ReturnValue-04/pom.xml" />
+        <option value="$PROJECT_DIR$/../StaticResource-05/pom.xml" />
+        <option value="$PROJECT_DIR$/../Path-06/pom.xml" />
+        <option value="$PROJECT_DIR$/../HelloMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/../SSM_07/pom.xml" />
+        <option value="$PROJECT_DIR$/../Forward_Redirct-08/pom.xml" />
+        <option value="$PROJECT_DIR$/../Exception-09/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../HelloMVC/GetParameter-03/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="liberica-1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

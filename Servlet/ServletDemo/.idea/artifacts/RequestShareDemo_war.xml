@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RequestShareDemo:war">
+    <output-path>$PROJECT_DIR$/../RequestShareDemo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>RequestShareDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="RequestShareDemo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="RequestShareDemo:war exploded" />
+    </root>
+  </artifact>
+</component>

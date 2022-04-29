@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatisDemo.DAO.StudentDAO">
+    <select id="selectAll"   resultType="com.mybatisDemo.Domain.Student">
+        select * from Student
+    </select>
+    <insert id="insertStudent">
+        select * from Student
+    </insert>
+</mapper>
+<!--sql映射文件，sql语句的所在处，mybatis会执行里面的sql语句
+
+1。指定约束文件:
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        mybatis-3-mapper.dtd这个文件是约束文件的名称，扩展名为dtd。
+2。约束文件的作用：限制、检查当前文件中出现的标签、属性必须符合mybatis的要求与规则。
+
+mapper内容是约束文件所定义的固定规则，满足以下规则来写sql语句。
+<mapper namespace="org.mybatis.example.BlogMapper">
+    <select id="selectBlog" resultType="Blog">
+        select * from Blog where id = #{id}
+    </select>
+</mapper>
+
+3。 mapper指当前文件的根标签
+    namespace：命名空间，唯一值，可以自定义。
+               但必须使用用dao接口的全限定名称(从根目录到包名，类名的语法格式)
+               com.mybatisDemo.DAO.StudentDAO
+
+4。根据不同的sql语句选择不同标签来表示数据库特定操作
+    <select>,<update>,<insert>,<delete>
+    id:所要执行的sql语句的唯一标识，mybatis会使用该id值来找到要执行的sql语句。
+       可以自定义，但要求使用接口中的方法名称！
+    resultType: sql语句执行之后，得到ResultSet，遍历ResultSet之后得到的java对象
+                即将ResultSet中的每行内容都转变为一个java实现类
+                值为类型的全限定名称（copy reference）
+                com.mybatisDemo.Domain.Student
+
+
+-->

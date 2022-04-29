@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Demo1_CreateSpringObject/Demo1_CreateSpringObject.iml" filepath="$PROJECT_DIR$/Demo1_CreateSpringObject/Demo1_CreateSpringObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo2_AssignAttributeValue/Demo2_AssignAttributeValue.iml" filepath="$PROJECT_DIR$/Demo2_AssignAttributeValue/Demo2_AssignAttributeValue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo3_AOP/Demo3_AOP.iml" filepath="$PROJECT_DIR$/Demo3_AOP/Demo3_AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo4_spring-mybatis/Demo4_spring-mybatis.iml" filepath="$PROJECT_DIR$/Demo4_spring-mybatis/Demo4_spring-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo5_spring-mybatis-transaction/Demo5_spring-mybatis-transaction.iml" filepath="$PROJECT_DIR$/Demo5_spring-mybatis-transaction/Demo5_spring-mybatis-transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SpringDemo.iml" filepath="$PROJECT_DIR$/.idea/SpringDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+    </modules>
+  </component>
+</project>

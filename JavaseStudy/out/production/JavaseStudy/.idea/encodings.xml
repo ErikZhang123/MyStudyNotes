@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/CollectionAndGeneric/Collectionfuntions/Student.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CollectionAndGeneric/Iterator/ConcorrentModificationException.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/CollectionAndGeneric/Iterator/IteratorDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/CollectionAndGeneric/List/SpecialFunctions.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Collections/CollectionsDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/DateClass/DateFormat.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/DateClass/Datedemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IOandFile/Buffered/demo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IOandFile/Buffered/缓冲流的特点" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IOandFile/Data/DataStream/demo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IOandFile/File/FileFuntions.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IOandFile/ObjectStream/TransientDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IOandFile/ObjectStream/demo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IOandFile/PrintStream/demo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/InnerClass/InnerClassTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/InterfaceDemo/teacherDemo/Teacher.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Map/HashMap/PutAndGet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Map/Hashtable/Properties/PropertiesDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Map/entrySetDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ObjectDemo/functions.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/PloymorphicDemo/Animal.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/PloymorphicDemo/Cat.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/PloymorphicDemo/Dog.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/PloymorphicDemo/InstanceOfDemo.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/PloymorphicDemo/PloymorphicDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/AlterableLengthParameter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/FiledDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/GetandSetThroughReflection.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/InvokeOfMethod.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/ReflectMethod.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/ResourceBundleDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/Student.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/demo1.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/demo2.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/getField.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/反射机制大纲" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ReflectDemo/获取字节码的三种方式" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Super/Student.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Super/Superdemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ThreadDemo/ProducerAndConsumer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ThreadDemo/ThreadDemo/CallableDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ThreadDemo/WaitAndNotify/test.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ThreadDemo/functions/FunctionsDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/abstractdemo/abstractdemo/abstractdemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/abstractdemo/teacherdemo/EnglishTeacher.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/abstractdemo/teacherdemo/MathTeacher.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/abstractdemo/teacherdemo/teacherdemo.java" charset="GBK" />
+  </component>
+</project>

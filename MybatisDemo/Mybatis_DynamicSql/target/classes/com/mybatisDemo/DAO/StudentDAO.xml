@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatisDemo.DAO.StudentDAO">
+
+<!--    动态sql主要包括 <if>,<where>,<foreach>-->
+
+    <select id="selectOne" resultType="com.mybatisDemo.Domain.Student">
+        select * from student where
+        <if test="uname != null and uname!=''">
+            uname= #{uname}
+        </if>
+        <if test="uid >5 ">
+            and uid > #{uid};
+        </if>
+    </select>
+<!--    sql语句被编译成了：select * from student where uname= ? and uid > ?;
+但是当第一个条件不满足的时候，会产生语法错误，因为多了一个and，所以需要用到<where标签来处理这个问题>-->
+<!--    ### SQL: select * from student where                                 and uid > ?;-->
+
+<!--    只要where标签中的任何一个if被满足，那么就会自动在sql语句后加上一个where 并且自动删除不需要的and,or等关键字-->
+    <select id="selectTwo" resultType="com.mybatisDemo.Domain.Student">
+        select * from student
+        <where>
+        <if test="uname != null and uname!=''">
+            uname= #{uname}
+        </if>
+        <if test="uid >5 ">
+            and uid > #{uid}
+        </if>
+        </where>
+        order by uid desc;
+    </select>
+
+<!--    foreach,当传入的参数是一个List时候，并且用于in后面的时候，要用到foreach来对in中的限制条件进行转化-->
+    <select id="selectThree" resultType="com.mybatisDemo.Domain.Student">
+        select * from student where uid in
+        <foreach collection="list" item="uid" open="(" close=")" separator=",">
+            #{uid}
+        </foreach>
+    </select>
+</mapper>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OnlineExamManagementSystem_Advance:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>OnlineExamManagementSystem_Advance</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="OnlineExamManagementSystem-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="OnlineExamManagementSystem_Advance:war exploded" />
+    </root>
+  </artifact>
+</component>

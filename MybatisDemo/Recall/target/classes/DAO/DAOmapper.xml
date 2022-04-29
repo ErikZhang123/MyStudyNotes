@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DAO.StudentLogin">
+    <select id="select" resultMap="student_resultmap">
+        select * from StudentBalance where sid = #{id}
+    </select>
+
+    <resultMap id="student_resultmap" type="Domain.Student">
+        <id column="sid" property="id"/>
+        <result column="sname" property="sname"/>
+        <result column="balance" property="balance"/>
+    </resultMap>
+
+</mapper>

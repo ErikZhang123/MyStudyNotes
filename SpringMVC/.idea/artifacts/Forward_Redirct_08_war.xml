@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Forward_Redirct-08:war">
+    <output-path>$PROJECT_DIR$/Forward_Redirct-08/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Forward_Redirct-08</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SSM_07.war">
+      <element id="artifact" artifact-name="Forward_Redirct-08:war exploded" />
+    </root>
+  </artifact>
+</component>

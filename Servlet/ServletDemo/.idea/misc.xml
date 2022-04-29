@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../FilterDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/../HttpServletRequestDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/../HttpServletResponseDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/../HttpSessionDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/../Listener" />
+    <file type="web" url="file://$PROJECT_DIR$/../Redirection" />
+    <file type="web" url="file://$PROJECT_DIR$/../RequestDispatchForward" />
+    <file type="web" url="file://$PROJECT_DIR$/../RequestShareDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/../ServletCookidDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/HttpServletResponseDemo/demo" />
+    <file type="web" url="file://$PROJECT_DIR$/../ServletSharedData/ServletContextDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/../ServletTest" />
+    <file type="web" url="file://$PROJECT_DIR$/../在线考试管理系统" />
+    <file type="web" url="file://$USER_HOME$/IdeaProjects/ServletTest" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/../HttpServletResponseDemo/HttpWervletRequestDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../HttpServletResponseDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../HttpServletRequestDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../在线考试管理系统/pom.xml" />
+        <option value="$PROJECT_DIR$/../ServletTest/pom.xml" />
+        <option value="$PROJECT_DIR$/../Redirection/pom.xml" />
+        <option value="$PROJECT_DIR$/../RequestForward/pom.xml" />
+        <option value="$PROJECT_DIR$/../ServletSharedData/ServletContextDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../ServletCookidDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../HttpSessionDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../RequestShareDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../Listener/pom.xml" />
+        <option value="$PROJECT_DIR$/../FilterDemo/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

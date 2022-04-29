@@ -1,0 +1,20 @@
+
+
+
+
+1、Class.forName（“完整类名”);
+    该方法是一个静态方法
+    其参数为字符串
+    其需要一个完整类名，包括java.lang包也不能省略，可以通过右键copy Reference来获取文件完整类名
+2、.getClass();
+    这是所有java对象都有的方法，他是Object中的方法
+    这个方法会将字节码加载到方法区，因此对于自建类来说，会执行其静态方法，且只执行一次
+    对于引用数据对象来说，.getClass()方法所获取的就是其内存地址。
+    即： String s = “abc”;
+        Class x = s.getClass();
+        sout(s==x)——————>会输出true；
+
+3、.class属性
+
+    java中所有数据类型，包括基本数据类型都有.class属性，与.getClass()一样，是直接指向其内存地址的；
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Demo1_CreateSpringObject" />
+        <module name="Demo3_AOP" />
+        <module name="Demo5_spring-mybatis-transaction" />
+        <module name="Demo4_spring-mybatis" />
+        <module name="test" />
+        <module name="Demo2_AssignAttributeValue" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Demo1_CreateSpringObject" target="1.8" />
+      <module name="Demo2_AssignAttributeValue" target="1.7" />
+      <module name="Demo3_AOP" target="1.8" />
+      <module name="Demo4_spring-mybatis" target="1.8" />
+      <module name="Demo5_spring-mybatis-transaction" target="1.8" />
+      <module name="Demo6_spring-web" target="1.8" />
+      <module name="Demo6_test" target="1.7" />
+      <module name="test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

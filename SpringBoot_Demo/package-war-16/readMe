@@ -1,0 +1,33 @@
+
+一、打包成war文件
+
+1。修改pom文件
+    <!--    打包类型，packaging标签，默认是jar-->
+        <packaging>war</packaging>
+
+    <!--        打包后文件名称-->
+            <finalName>myboot</finalName>
+
+2。主启动类要继承SpringBootServletInitializer 让其可以使用外部tomcat
+   这个继承就是代替了原来的web.xml，使用嵌入式servlet，不支持jsp
+3。通过外部tomcat访问时候注意
+    打包后将war文件放到Tomcat的webapp下，终端运行tomcat时会自动解压
+     打包以后 包名就是访问的context-path，可能与文件的application中的设置不一样
+     如果使用外部tomcat，端口为8080
+     可能遭遇Tomcat在终端无法访问的情况，考虑重新下载tomcat
+
+二、打包称jar文件
+打包jar时，如果有jsp文件，必须指定maven-plugin版本
+<packaging>jar</packaging>
+必须指定 <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.2.RELEASE</version>  必须指定这个版本
+            </plugin>
+        </plugins>
+
+三、jar与war的区别
+war：充分利用tomcat服务器
+
+jar包更轻便，但是内嵌的tomcat在性能上比独立的tomcat弱一些

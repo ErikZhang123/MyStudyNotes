@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="OnlineExamManagementSystem_Advance:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/OnlineExamManagementSystem_Advance_war_exploded2</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="OnlineExamManagementSystem_Advance" />
+          <element id="library" level="project" name="apache-tomcat-9.0" />
+        </element>
+      </element>
+      <element id="library" level="project" name="java" />
+      <element id="javaee-facet-resources" facet="OnlineExamManagementSystem_Advance/web/Web" />
+    </root>
+  </artifact>
+</component>

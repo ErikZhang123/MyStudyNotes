@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="OnlineExamManagementSystem（菜鸟版）:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/OnlineExamManagementSystem_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="OnlineExamManagementSystem（菜鸟版）" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="OnlineExamManagementSystem（菜鸟版）/web/Web" />
+      <element id="javaee-facet-resources" facet="OnlineExamManagementSystem（菜鸟版）/web/Web2" />
+    </root>
+  </artifact>
+</component>

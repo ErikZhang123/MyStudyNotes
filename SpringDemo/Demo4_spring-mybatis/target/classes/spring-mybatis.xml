@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/util
+        https://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:property-placeholder location="classpath:Mybatis.properties" />
+
+<!--    注意，读取属性文件的约束文件为：xmlns:context="http://www.springframework.org/schema/context"
+        并且在schemaLocation中增加：
+         http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd-->
+
+<!--    创建出mybatis的DataSource对象，从而可以创建出SqlSessionFactory对象
+        spring可以自动识别驱动的类型，所以在属性文件中可以不写driver的包             -->
+    <bean id="MyDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init"
+          destroy-method="close">
+        <property name="url" value="jdbc:mysql://localhost:3306/student"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="zhang123"></property>
+    </bean>
+
+<!--    创建SqlSessionFactory     -->
+    <bean id="MySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="MyDataSource"></property>
+<!--        注入已经创建的DataSource对象，让spring开始创建SqlSessionFactory对象-->
+        <property name="configLocation" value="classpath:Mybatis_Mysql_Property.xml"></property>
+<!--        configLocation是一个Resource类型的对象，读取mybatis配置文件，赋值使用value，比较特殊-->
+    </bean>
+
+<!--    创建DAO对象，MapperScannerConfigurer会将每个接口都调用getMapper()生成每个dao接口的代理对象，创建好的对象会放入spring容器中-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="MySqlSessionFactory"/>
+        <property name="basePackage" value="com.DAO"/>
+    </bean>
+
+    <context:component-scan base-package="com"/>
+    <aop:aspectj-autoproxy/>
+    <bean id="StudentServiceImp" class="com.Service.StudentServiceImpl">
+        <property name="studentDAO" ref="studentDAO"/>
+    </bean>
+</beans>

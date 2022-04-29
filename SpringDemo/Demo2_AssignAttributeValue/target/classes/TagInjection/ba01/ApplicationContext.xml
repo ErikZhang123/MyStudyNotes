@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--   基于xml的di赋值
+简单类型：基本类型与String
+方法一：set注入：使用对象的set()方法对其属性进行赋值
+spring会将name的值和"set"进行拼接，然后使用反射机制调用对应的set方法
+1）简单类型的set注入:使用<propertiy name="" value=""/>，一次只能赋一个值
+-->
+
+    <bean id="Student" class="com.TagInjection.ba01.Student">
+        <property name="name" value="zhangsan"/><!--property标签实际上调用的是set()方法,
+        如果类中没有相应的set方法，则会报错Bean property 'name' is not writable or has an invalid setter method-->
+        <property name="age" value="18"/>
+<!--        无论在class中属性是什么类型，所有的value都必须放在双引号""之中-->
+        <property name="Email" value="123@qq.com"/>
+<!--   Spring在使用set赋值时实际上只是调用存在的setEmail()方法,但不会在意属性是否存在，且大小写不影响
+        比如：在Student类中并不存在Email属性，但执行中不会报错-->
+    </bean>
+
+    <bean id="myDate" class="java.util.Date">
+    <property name="time" value="10000"/>
+<!--        对日期设置初值会在1970年的时间上增加-->
+    </bean>
+
+
+</beans>

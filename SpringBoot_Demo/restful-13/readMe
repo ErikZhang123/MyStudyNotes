@@ -1,0 +1,56 @@
+接口架构风格 ： RESTful
+这里的接口指的是API，application Programming Interface 。 比如函数，http接口。开发人员可以通过接口来访问或调用一些
+已经开发好的函数功能，但是无需访问源妈，也无需了解工作原理
+比如：servlet，controller的url实际上就可以视为一个接口
+    http://localhost:9002/mytransaction/addStudent?name=zhangsan&age=29
+架构风格： 指接口组织的方式，即接口的格式
+
+RESTful是一种接口格式： 表现层状态转移 ， 实际上就是使用url表示资源，使用http动作来操作资源
+        表现层就是视图层，通过视图页面显示操作结果
+        状态： 指 资源变化
+        转移：
+1。 REST：Representational State Transfer 是一种架构设计风格，并非强制
+    它是客户端和服务器交互时的架构理念和设计原则。基于REST的风格更简洁，更有层次。
+2。 REST中的要素：
+    用REST表示资源 以及 对资源的操作
+    1、资源使用url表示，在互联网中， 所使用的所有资源都是通过url表示的。
+        REST在url中使用名词表示资源以及资源访问信息
+                                                  1001是要查询的学生id，REST将其使用" / "来分割资源信息
+        格式：http://localhost:8080/myboot/student/1001
+
+    2、对资源的操作： CRUD
+        查询、更新、删除、创建 -> 资源
+        REST中使用http中的动作（动作指的就是http中的请求方式），表示对资源的操作
+        动作包括： （ 这些只是在REST风格下对应的动作 ）
+            1. get 查询资源 （ 1001 是id， 1是学生状态，）
+                查询学生：http://localhost:8080/myboot/student/1001/1
+                处理多个资源：使用复数形式
+                http://localhost:8080/myboot/student/1001/1002/1003/...
+            2. post 创建资源，在post请求中传递数据，前端页面使用表单的模式传递数据
+                http://localhost:8080/myboot/student/1002
+                <form action="http://localhost:8080/myboot/student" method="post">
+                <input name="name">
+                <input name="age">
+                </form>
+             以下两个方式，浏览器默认不支持，所以使用postman工具来模拟依赖
+             SpringMVC中使用过滤器将收到的post请求转为put和delete
+                1. 在 application.properties 中开启HiddenhttpMethodFilter过滤器
+                2. 在请求页面中，需要包含一个_method参数，value为put或delete，发起这个请求时要使用post方式
+            3. put: 更新资源
+            <form action="http://localhost:8080/myboot/student/1" method="post">
+                        <input type="text" name="name">
+                        <input type="text" name="age">
+                        <input type="hidden" name="_method" value="PUT />
+                        用这样的方法来让浏览器知道实际上要用put来访问
+                        </form>
+            4. delete: 删除资源
+    注意： 一些比如分页，排序等参数依然放在url后面。 只有与资源 密切相关的才放在url中
+        http://localhost:8080/myboot/student?page=1&pageSize=20
+3。 RESTful的注解：
+    1。 @PathVariable: 从url中获取数据
+    2。 @GetMapping: 支持get请求方式， 等同于 RequestMapping(method=RequestMethod.GET)
+    3。 @PostMapping: 支持post请求方式， 等同于 RequestMapping(method=RequestMethod.POST)
+    4。 @PutMapping：支持get请求方式， 等同于 RequestMapping(method=RequestMethod.PUT)
+    5。 @DeleteMapping：支持get请求方式， 等同于 RequestMapping(method=RequestMethod.Delete)
+    6。 @RestController： 复合注解， 是 @Controller与@ResponseBody的组合
+        在某个类上使用@RestController，表示该类的所有方法都加入了ResponseBody

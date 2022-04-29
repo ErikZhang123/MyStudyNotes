@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatisDemo.DAO.StudentDAO">
+    <select id="selectAll" resultType="mybatisDemo.Domain.Student">
+        select * from Student
+    </select>
+
+<!--#{属性名}可以获取传入的java对象的同名属性-->
+    <select id="selectByIdAndName" resultType="mybatisDemo.Domain.Student">
+        select * from Student where uid=#{id} and uname=#{name}
+    </select>
+
+<!--注意：#使用的是JDBC中的PreparedStatement。$使用的是Statement,且字符需要自己加上''单引号-->
+    <select id="selectTwo" resultType="mybatisDemo.Domain.Student">
+        select * from Student where uid='${uid}' and uname='${uname}';
+    </select>
+
+<!--使用别名，用student替换mybatisDemo.Domain.Student，已经在主配置文件中声明-->
+    <select id="selectbyOtherName" resultType="Student">
+        select * from Student where uid=#{uid} and uname=#{uname};
+    </select>
+
+<!--结果映射resultMap，当列名与属性名不一致的时候使用-->
+    <resultMap id="studentMap" type="Student2">
+<!--        对于表的pk使用id标签-->
+        <id column="uid" property="id"/>
+<!--        对于其他column使用result标签-->
+        <result column="uname" property="name"/>
+    </resultMap>
+
+    <select id="resultMapTest" resultMap="studentMap">
+        select uid,uname from student;
+    </select>
+
+<!--    模糊查询 两种方式：-->
+<!--    第一种：在java中准备好查询的内容，直接将其作为String参数传入，然后使用#{}的方式读取-->
+<!--    第二种：在mapper中拼接-->
+    <select id="blurSelect" resultType="Student">
+        select * from student where uname like "%" #{uname} "%";
+    </select>
+
+    <insert id="insertStudent">
+        insert into Student values (#{uid},#{uname},#{upassword},#{usex},#{uemail})
+    </insert>
+
+
+</mapper>

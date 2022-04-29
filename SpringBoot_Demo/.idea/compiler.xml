@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="servlet-09" />
+        <module name="thymeleaf-20" />
+        <module name="hellospringboot-02" />
+        <module name="springboot_jsp-06" />
+        <module name="redis-14" />
+        <module name="filters-10" />
+        <module name="orm-mysql-11" />
+        <module name="transaction-12" />
+        <module name="interceptor-08" />
+        <module name="package-war-16" />
+        <module name="CommandLineRunner-applicationcontext-07" />
+        <module name="many_env-05" />
+        <module name="hellothymeleaf-19" />
+        <module name="springboot-04-web" />
+        <module name="restful-13" />
+        <module name="springboot-03" />
+        <module name="SpringBoot-001" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CommandLineRunner-applicationcontext-07" target="11" />
+      <module name="demo" target="11" />
+      <module name="filters-10" target="11" />
+      <module name="hello-springboot-02" target="1.8" />
+      <module name="hellospringboot-02" target="11" />
+      <module name="hellothymeleaf-19" target="11" />
+      <module name="interceptor-08" target="11" />
+      <module name="many_env-05" target="1.8" />
+      <module name="orm-mysql-11" target="11" />
+      <module name="package-war-16" target="11" />
+      <module name="redis-14" target="11" />
+      <module name="restful-13" target="11" />
+      <module name="servlet-09" target="11" />
+      <module name="SpringBoot-001" target="1.8" />
+      <module name="Springboot-01" target="1.5" />
+      <module name="springboot-03" target="1.8" />
+      <module name="springboot-04-web" target="1.8" />
+      <module name="SpringBoot_001" target="1.5" />
+      <module name="springboot_jsp-06" target="1.8" />
+      <module name="thymeleaf" target="11" />
+      <module name="thymeleaf-20" target="11" />
+      <module name="transaction-12" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CommandLineRunner-applicationcontext-07" options="-parameters" />
+      <module name="filters-10" options="-parameters" />
+      <module name="hello-springboot-02" options="-parameters" />
+      <module name="hellospringboot-02" options="-parameters" />
+      <module name="hellothymeleaf-19" options="-parameters" />
+      <module name="interceptor-08" options="-parameters" />
+      <module name="many_env-05" options="-parameters" />
+      <module name="orm-mysql-11" options="-parameters" />
+      <module name="package-war-16" options="-parameters" />
+      <module name="redis-14" options="-parameters" />
+      <module name="restful-13" options="-parameters" />
+      <module name="servlet-09" options="-parameters" />
+      <module name="springboot-03" options="-parameters" />
+      <module name="springboot-04-web" options="-parameters" />
+      <module name="springboot_jsp-06" options="-parameters" />
+      <module name="thymeleaf" options="-parameters" />
+      <module name="thymeleaf-20" options="-parameters" />
+      <module name="transaction-12" options="-parameters" />
+    </option>
+  </component>
+</project>

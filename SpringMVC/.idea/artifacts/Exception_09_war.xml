@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Exception-09:war">
+    <output-path>$PROJECT_DIR$/Exception-09/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Exception-09</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SSM_07.war">
+      <element id="artifact" artifact-name="Exception-09:war exploded" />
+    </root>
+  </artifact>
+</component>

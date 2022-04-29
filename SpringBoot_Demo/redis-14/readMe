@@ -1,0 +1,37 @@
+SpringBoot中有一个 RedisTemplate (StringREdisTemplate） 来操作与Redis的交互
+
+RedisTemplate实际上使用的依赖是
+      <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+     而data-redis使用的是lettuce客户端库
+     因此当操作RedisTemplate类时，底层用的是lettuce客户端
+（host，ip，password）
+
+StringRedisTemplate ：
+    将k和v都作为String处理，使用的是String的序列化
+RedisTemplate ：
+    把k和v经过序列化存到redis。 k,v 已经被序列化了，因此可读性较差，默认是JDK序列化，不支持跨语言
+    但JDK效率较低，需要更具使用情况来选择合适的序列化方式
+    比如： myname -> \xAC\xED\x00\x05t\x00\x06myname
+
+    设置序列化方式： 可以单独对key，value设置序列化，也可以同时设置
+@PostMapping("/redis/serialize")
+    public String Serialize(){
+
+        //设置key使用String序列化
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        //设置value
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
+
+        redisTemplate.opsForValue().set("afterSetSerializeKey","Value");
+        return "定义key和value的序列化操作";
+    }
+
+   2. 设置json序列化
+        将数据进行json序列化
+       redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<Student>(Student.class));
+       redisTemplate.opsForValue().set("mystudent",s);
+        获取的时候，也会将获得的json自动反序列化为对象

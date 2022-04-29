@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>
+    <div th:each="map,userStat : ${mymap}">
+<!--        以键值对的方式遍历map-->
+        <p th:text="${map.key}"></p>
+        <p th:text="${map.value}"></p>
+<!--        此时的map.value 是一个对象， 可以调用对象中的属性-->
+        <p th:text="${map.value.id}"></p>
+    </div>
+
+</h3>
+</body>
+</html>

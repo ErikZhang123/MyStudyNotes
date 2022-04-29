@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ServletCookidDemo:war">
+    <output-path>$PROJECT_DIR$/../ServletCookidDemo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ServletCookidDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ServletCookidDemo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ServletCookidDemo:war exploded" />
+    </root>
+  </artifact>
+</component>

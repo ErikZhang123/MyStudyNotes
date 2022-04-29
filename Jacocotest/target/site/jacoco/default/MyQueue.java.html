@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyQueue.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Examples</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">MyQueue.java</span></div><h1>MyQueue.java</h1><pre class="source lang-java linenums">
+public class MyQueue&lt;E&gt; implements DelayedQueue&lt;E&gt;{
+    private node&lt;E&gt; head;
+    private node&lt;E&gt; next;
+    private node&lt;E&gt; tail;
+    private int size;
+    private int delay_condition;
+    private int calculator;
+<span class="fc" id="L9">    private boolean flag = false;//flag 为true时可以pop，flag为false时不能pop</span>
+
+<span class="fc" id="L11">    public MyQueue(int i){</span>
+//        if(i&lt;=1) i=0;
+<span class="fc" id="L13">        head =null;</span>
+<span class="fc" id="L14">        next = null;</span>
+<span class="fc" id="L15">        size = 0;</span>
+<span class="fc" id="L16">        delay_condition = i;</span>
+<span class="fc" id="L17">        calculator = delay_condition;</span>
+<span class="fc" id="L18">    }</span>
+
+    @Override
+    public int size() {
+<span class="fc" id="L22">        return size;</span>
+    }
+
+    @Override
+    public void enqueue(E element) {
+        //is head
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if(size==0 ){</span>
+<span class="fc" id="L29">            head = new node(element);</span>
+<span class="fc" id="L30">            tail = head;</span>
+<span class="fc" id="L31">            calculator = delay_condition;</span>
+<span class="fc" id="L32">            size++;</span>
+<span class="fc" id="L33">            calculator--;</span>
+        }//is not head
+        else{
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if(flag){</span>
+<span class="fc" id="L37">                calculator = delay_condition;</span>
+<span class="fc" id="L38">                flag = false;</span>
+            }
+<span class="fc" id="L40">            node temp = new node(element);</span>
+<span class="fc" id="L41">            node temp2 = tail;</span>
+
+<span class="fc" id="L43">            tail.next = temp;</span>
+<span class="fc" id="L44">            tail = temp;</span>
+<span class="fc" id="L45">            tail.prev = temp2;</span>
+<span class="fc" id="L46">            size++;</span>
+<span class="fc" id="L47">            calculator--;</span>
+        }
+<span class="fc" id="L49">    }</span>
+
+    @Override
+    public E dequeue() throws IllegalStateException {
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if(size == 0 )</span>
+<span class="fc" id="L54">            throw new IllegalStateException(&quot;&quot;);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if(!check())</span>
+<span class="fc" id="L56">            return null;</span>
+<span class="fc" id="L57">        node&lt;E&gt; pointer = head;</span>
+<span class="fc" id="L58">        head = head.next;</span>
+<span class="fc" id="L59">        size -- ;</span>
+<span class="fc" id="L60">        return pointer.item;</span>
+    }
+
+    @Override
+    public E peek() throws IllegalStateException {
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if(size == 0 ) throw new IllegalStateException(&quot;The stack is empty.&quot;);</span>
+<span class="fc" id="L66">        return head.item;</span>
+    }
+
+    @Override
+    public int getDelay() {
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if(calculator&lt;0)</span>
+<span class="fc" id="L72">            return 0;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if(calculator==15)</span>
+<span class="fc" id="L74">            return 14;</span>
+<span class="fc" id="L75">        return calculator;</span>
+    }
+
+    @Override
+    public void setMaximumDelay(int d) {
+<span class="fc" id="L80">        this.delay_condition = d;</span>
+<span class="fc" id="L81">    }</span>
+
+    @Override
+    public int getMaximumDelay() {
+<span class="fc" id="L85">        return delay_condition;</span>
+    }
+
+    @Override
+    public boolean clear() {
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        if(size == 0)</span>
+<span class="fc" id="L91">            return true;</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        if(check()){</span>
+<span class="fc" id="L93">            head = null;</span>
+<span class="fc" id="L94">            tail = null;</span>
+<span class="fc" id="L95">            size = 0;</span>
+<span class="fc" id="L96">            return true;</span>
+        }
+<span class="fc" id="L98">        return false;</span>
+    }
+
+    @Override
+    public boolean contains(Object elem) {
+<span class="fc" id="L103">        int i=0;</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (elem == null) {</span>
+<span class="pc bpc" id="L105" title="1 of 4 branches missed.">            for (node&lt;E&gt; x = head; x != null &amp;&amp; i&lt;size; x = x.next,i++) {</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">                if (x.item == null)</span>
+<span class="fc" id="L107">                    return true;</span>
+            }
+        } else {
+<span class="pc bpc" id="L110" title="1 of 4 branches missed.">            for (node&lt;E&gt; x = head; x != null &amp;&amp; i&lt;size; x = x.next,i++) {</span>
+<span class="fc bfc" id="L111" title="All 2 branches covered.">                if (elem.equals(x.item))</span>
+<span class="fc" id="L112">                    return true;</span>
+            }
+        }
+<span class="fc" id="L115">        return false;</span>
+    }
+
+    public boolean check(){
+<span class="fc bfc" id="L119" title="All 2 branches covered.">        if(this.calculator &lt;= 0)</span>
+<span class="fc" id="L120">            flag = true;</span>
+<span class="fc" id="L121">        return flag;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

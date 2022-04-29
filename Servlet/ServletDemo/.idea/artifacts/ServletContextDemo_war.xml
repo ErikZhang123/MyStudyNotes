@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ServletContextDemo:war">
+    <output-path>$PROJECT_DIR$/../ServletSharedData/ServletContextDemo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ServletContextDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ServletContextDemo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ServletContextDemo:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- <configuration> 根标签-->
+<configuration>
+    <!--   settings：控制mybatis的全局行为-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    <!--        设置mybatis输出日志-->
+    </settings>
+
+    <!--<environments> 环境配置：数据库信息配置
+    default的值必须和某个environment的值一样，它会告诉mybatis使用哪个数据库的链接信息
+    以便与在同时链接多个数据库的时候可以进行切换
+    比如在本机测试，在服务器上真正运行的时候所用数据库不一样-->
+    <environments default="mysql">
+        <!--<environment> 一个数据库信息的配置，即环境。
+        id是唯一标识，表示环境名称，可自定义-->
+        <environment  id="mysql">
+            <!--<transactionManager> 事务类型。
+             type的值：JDBC，使用jdbc的commit与rollback做事务处理-->
+            <transactionManager type="JDBC"/>
+            <!--dataSource 表示数据源，连接数据库使用
+                type = "POOLED"表示用连接池-->
+            <dataSource type="POOLED">
+                <!--数据库链接的具体信息，以下值是固定的，不可自定义-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!--driver 数据库驱动类名-->
+                <property name="url" value="jdbc:mysql://localhost:3306/STUDENTINFO"/>
+                <!--url 链接数据库的url字符串，最后的是库名-->
+                <property name="username" value="root"/>
+                <property name="password" value="12345678"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+<!--指定sql映射文件（sql mapper）的位置
+    一个mapper标签指定一个文件位置，从类路径开始的路径信息。 即target/classes下面开始的路径
+    但由于maven在编译时会自动忽略非 .java的文件，因此需要在maven的pom文件中用resource插件声明
+    mapper标签可以出现多次，可以指定多个映射文件。-->
+<!--    但是如果两个mapper 的namespace相同，则会报错-->
+    <mappers>
+        <mapper resource="com/mybatisDemo/DAO/StudentDAO.xml"/>
+<!--        <mapper resource="com/mybatisDemo/DAO/StudentDAO2.xml"/>-->
+    </mappers>
+
+</configuration>
+
+
+        <!--mybatis 主配置文件
+        定义数据库配置信息、sql映射文件的信息-->

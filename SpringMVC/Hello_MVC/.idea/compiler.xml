@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SSM_07" />
+        <module name="Path-06" />
+        <module name="GettingParameter-03" />
+        <module name="RequestMapping-02" />
+        <module name="ReturnValue-04" />
+        <module name="Exception-09" />
+        <module name="Forward_Redirct-08" />
+        <module name="StaticResource-05" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Forward_And_Redirect-08" target="1.7" />
+      <module name="GetParameter" target="1.7" />
+      <module name="GetParameter-03" target="8" />
+      <module name="Hello_MVC" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

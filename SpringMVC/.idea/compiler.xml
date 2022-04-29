@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SSM_07" />
+        <module name="Interceptor-10" />
+        <module name="Path-06" />
+        <module name="GettingParameter-03" />
+        <module name="Exception-09" />
+        <module name="ReturnValue-04" />
+        <module name="RequestMapping-02" />
+        <module name="Forward_Redirct-08" />
+        <module name="StaticResource-05" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Exception-09" target="1.8" />
+      <module name="Forward_Redirct-08" target="1.8" />
+      <module name="GettingParameter-03" target="1.8" />
+      <module name="HelloMVC" target="1.8" />
+      <module name="Interceptor-10" target="1.8" />
+      <module name="Path-06" target="1.8" />
+      <module name="RequestMapping-02" target="1.8" />
+      <module name="ReturnValue-04" target="1.8" />
+      <module name="SSM_07" target="1.8" />
+      <module name="StaticResource-05" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

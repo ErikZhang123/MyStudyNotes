@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:inline="javascript">
+<!--       在此处可以使用表达式[[${data}]]来获取变量数据-->
+        var mysex = [[${data}]];
+        alert("使用 js 获取了模版中的数据 性别"+mysex);
+    </script>
+</head>
+<body>
+<div th:inline="text">
+    <p> 这里使用th:inline="text"显示性别：[[${data}]] </p>
+
+</div>
+</body>
+</html>

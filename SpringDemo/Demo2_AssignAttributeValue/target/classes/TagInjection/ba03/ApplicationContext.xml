@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--   基于xml的di赋值
+简单类型：基本类型与String
+方法二：构造注入：使用类的有参构造对bean赋初值
+语法：
+bean标签下使用<constructor-arg>标签：
+标签属性：
+name：构造方法形参名
+index：构造方法中参数的位置，从左往右，以0开始算起
+value：构造方法的形参是简单类型的时候使用，传值
+ref: 形参为引用类型的时候使用
+-->
+
+    <bean id="Student" class="com.TagInjection.ba03.Student">
+      <constructor-arg name="name" value="zhangsan"/>
+      <constructor-arg name="age" value="18"/>
+      <constructor-arg name="school" ref="School"/>
+    </bean>
+    <bean id="Student2" class="com.TagInjection.ba03.Student">
+        <constructor-arg index="0" value="李四"/>
+        <constructor-arg value="44"/>
+<!--        index也可以省略，但是标签所在顺序就会影响赋值的形参对象-->
+        <constructor-arg index="2" ref="School2"/>
+    </bean>
+
+    <bean id="School" class="com.TagInjection.ba03.School">
+        <property name="name" value="USYDDDD"/>
+    </bean>
+    <bean id="School2" class="com.TagInjection.ba03.School">
+        <property name="name" value="EDU"/>
+    </bean>
+
+</beans>

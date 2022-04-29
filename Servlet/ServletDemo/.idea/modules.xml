@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../FilterDemo/FilterDemo.iml" filepath="$PROJECT_DIR$/../FilterDemo/FilterDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../HttpServletRequestDemo/HttpServletRequestDemo.iml" filepath="$PROJECT_DIR$/../HttpServletRequestDemo/HttpServletRequestDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../HttpServletResponseDemo/HttpServletResponseDemo.iml" filepath="$PROJECT_DIR$/../HttpServletResponseDemo/HttpServletResponseDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../HttpSessionDemo/HttpSessionDemo.iml" filepath="$PROJECT_DIR$/../HttpSessionDemo/HttpSessionDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Listener/Listener.iml" filepath="$PROJECT_DIR$/../Listener/Listener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../在线考试管理系统/OnlineExamManagementSystem.iml" filepath="$PROJECT_DIR$/../在线考试管理系统/OnlineExamManagementSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Redirection/Redirection.iml" filepath="$PROJECT_DIR$/../Redirection/Redirection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RequestShareDemo/RequestShareDemo.iml" filepath="$PROJECT_DIR$/../RequestShareDemo/RequestShareDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ServletSharedData/ServletContextDemo/ServletContextDemo.iml" filepath="$PROJECT_DIR$/../ServletSharedData/ServletContextDemo/ServletContextDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ServletCookidDemo/ServletCookidDemo.iml" filepath="$PROJECT_DIR$/../ServletCookidDemo/ServletCookidDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServletLifeCircle/ServletLifeCircle.iml" filepath="$PROJECT_DIR$/ServletLifeCircle/ServletLifeCircle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ServletTest/ServletTest.iml" filepath="$PROJECT_DIR$/../ServletTest/ServletTest.iml" />
+    </modules>
+  </component>
+</project>

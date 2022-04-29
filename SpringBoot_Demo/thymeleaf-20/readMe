@@ -1,0 +1,145 @@
+只有加了th 才能被模版引擎处理，但是在前端浏览器打开开发者界面的时候不会显示th
+加th的意义，实际上是让其可以根据后端返回的数据来动态更改html的属性
+可以在xmlns:th="http://www.w3.org/1999/xhtml"> 更改，将th更改就可以
+1、 表达式：
+    1。标准变量表达式
+    语法： ${key} 获取key对应的文本数据，key是request作用域中的key
+            可以使用request.setAttribute或model.addAttribute 将数据放入reqeust作用域
+    在html的中使用 属性  th:text="${key}" ， 实际上获取的就是对象，如果访问对象的属性，使用的是set，get方法
+    如果key不存在，则会使用 "" 空字符串将标签中的文本内容进行替代
+
+    2。 选择变量表达式（星号变量表达式）
+    语法： *{key}
+    作用：获取key对应的数据， 注意 ， *{key}不能单独使用，要和 th:object 一起使用，来获取对象的属性值
+    为了简化 ${key} 每次取出对象属性都要写 user.  的耦合性
+    注意，只能在th:object 的标签内部使用该对象的属性，标签外无法使用
+
+    <div th:object="${user2}">   首先在div中要获取这个对象
+        然后在标签中通过* 来使用对象的属性
+        <p th:text="*{id}">id</p><br>
+        <p th:text="*{name}">姓名</p><br>
+        <p th:text="*{age}">年龄</p><br>
+    </div>
+
+    3. 链接表达式（URL表达式）
+    语法： @{url}
+    作用：表示链接， 可以对一下的类型使用，链接可以是绝对地址也可以是相对地址
+    <script src="">,<link href = ""> <a href=""> <form action=""> <img src ="">
+
+    链接绝对路径
+        <a th:href="@{http://www.baidu.com}">链接到百度</a>
+    链接相对路径 ， 注意开头有无 / 的区别
+        <a th:href="@{/tpl/queryAccount}">相对地址，没有参数</a>
+    链接相对路径，用字符串传递参数
+        <a th:href="@{'/tpl/queryAccount?id='+${userid}}">相对地址，将参数缝合在url中传输，从model中获取</a>
+
+    字符串拼接的传参方式并不是很推荐,推荐使用一下几种方式
+    1、使用() 传参数
+        <a th:href="@{/tpl/queryAccount(id=${userid})}">使用() 传参数></a>
+    2、使用() 传递多个参数，参数名字要与后端接受的参数名一致
+        <a th:href="@{/tpl/queryUser(name='lisi',age='20')}">使用() 传多个参数></a>
+
+2、属性： 属性是放在html元素中，实际上就是html的属性，加上了th前缀。
+    属性作用不变，只不过加上th以后，属性值会由模版引擎处理，让其可以使用变量表达式
+    比如<form action="/login" method="post"></form>
+    也可以写成<form th:action="/login" th:method="${method}"></form>
+
+3、 each循环， 可以循环List，Array，Map
+    语法：
+    在一个html的标签中使用, 其中 集合循环成员，循环状态变量 是可以自定义名称，而且循环状态变量可以不定义
+    有点类似于foreach，注意，each用在哪个标签上，哪个标签以及其包裹的内容就会循环出现n次
+    <div th:each="集合循环成员，循环状态变量 : ${key}">
+           <p th:text="${集合循环成员}"></p>
+    </div>
+    循环状态变量 默认名字是 集合循环成员+State。通过该变量可以获得以下信息
+    index: 当前迭代对象的索引
+    count: 当前迭代对象的数量，已经迭代了多少个，从1开始计算
+    size:  被迭代的对象大小，即 集合中有多少对象
+    current：当前迭代变量
+    even/odd : 当前所在的是偶数？奇数？
+    first：判断是否是一个迭代
+    last: 判断是否是最后一个迭代
+
+    注意： 再遍历Map的时候 有 对象.key,对象.value。这个对象就是当前遍历到的map中的kv对象
+
+4、判断条件 if ; unless , 符号和java中一样，比如== ， 注意，空字符串被认为是true，null被认为false
+   <div th:if = "${表达式}" > 文本内容 </div>      如果表达式中结果为true，则显示标签体的内容，否则不现实
+   <div th:unless = "${表达式}" > 文本内容</div>   与if相反，除了表达式相等的情况，其他都显示标签体中的内容
+
+5、 switch , case 使用方法和java一样，但是所有的case只有一个能匹配成功，匹配成功了才显示标签内的内
+<div th:switch="要比对的值">
+    <p th:case="值1"> 结果1 </p>
+    <p th:case="*"> 默认结果 </p>
+</div>
+
+6、 内联   th:inline 三个取值类型： text , javascript, none
+    不用依赖于html标签，直接显示。 <p th:text=""> 这是依赖于html的
+
+    1、 内联text : 在html标签外获取表达式的值, 可以直接在标签内容后面显示获取的变量值，而不会替代表达式内容
+        语法：
+        <div th:inline="text">
+        <p> 显示姓名是 ： [[${key}]] </p>
+        </div>
+    2、  内联javascript : 在 js语句中获取数据, 也可以在事件中使用js方法
+
+7、字面量： 包括数字类型， 文本类型，boolean类型
+    可以在th:text"" 中使用'' 单引号来讲 字面量 和 表达式 区分开
+    <p th:text="'我是'+ ${sex} + '人'">
+    字符串链接 使用| 字符串+ 表达式|
+    <p th:text="|我是 ${sex}  人|">
+
+8、运算符： 正常的运算符， 需要在${} 中使用
+    gt,lt,ge,le, 代表 > , < ,>= ,<=
+    eq ,  nq 代表 ==  ， ！=
+    也可以进行多元表达式 a < b ? 1 : 2  其中a  ， b 也可以为表达式，可以嵌套
+
+9、 内置对象,可以看Thymeleaf的文档来看更多的内置对象
+    1.基本对象
+        #request：HttpServletRequest
+        #session：HttpSession
+        session 也可以表示HttpSession 对象，是#session 的简单方式
+        可以在模版中直接使用
+        ${param} 获取请求对象的参数列表，其实使用方法和servlet中使用的方法是一样的
+
+    2.内置的工具类功能，可以看Thymeleaf的文档来看更多的内置工具类对象的使用方法（和java类似）
+     使用的时候注意，在${ }里面的内容，在对象方法中调用变量的时候不需要再写${}
+        #dates  ${#date.formate(mydate)} , 这里mydate是从Controller中添加到request的，不需要再加${}
+        #numbers.formatDecimal()/formatCurrency() 等
+        #strings
+        #lists
+    3.内置工具类对null的处理
+        可以使用 ？ 来判断当前对象是否为null
+        ${ zoo.dog ?.name} 判断zoo.dog 这个对象是否为null，如果不为null，则调用其name属性，否则不调用name
+
+10、 自定义模版 （内容复用）
+    语法：
+    1、定义模版： 替换：fragment="模版自定义名称"
+        <div th:fragment="head">
+            <p> 111111
+        </div>
+    2、引用模版：
+        方法一： ~{templatename :: selector} 注意，中间的两个冒号前后都有空格
+                其中templatename 实际上是 模版所在的文件名称
+                selector 模版名称
+        方法二： templatename :: selector  没有 ~{} 符号，注意，中间的两个冒号前后都有空格
+
+        使用：
+            1。插入模版 th:insert ,head是指head.html top是指模版名称
+                <div th:insert="~{ head :: top }"> </div> 会插入到当前div标签中的内容
+                但是插入的这一层div还在 ，最后的结构是
+                <div>
+                    <div> 插入进来的模版内容
+                    <div>
+                <div>
+            2。包含模版 th:include ，完全覆盖掉标签中的内容
+                <div th:insert="~{ head :: top }"> </div> 会完全替换掉掉标签中的内容
+                插入的这一层div也会被替换，最后的结构是
+                    <div> top模版的内容
+                    <div>
+    3、引用整个html文件作为复用模版，引用的事<body> 中的内容 (引用的html在同级目录下)
+        方法一：<div th:include="footer :: html"> footer是文件名，后面的html代表整个文件
+        方法二：<div th:include="footer">  引擎会寻找footer.html文件
+
+    4、引用整个html文件 ， 引用的文件不在同级目录下，而在子目录下
+        在文件位置的地方使用 子文件夹名称/文件名.html
+        <div th:include="子文件夹名称/left :: html">

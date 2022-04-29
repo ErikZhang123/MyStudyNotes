@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="HttpServletRequestDemo" />
+        <module name="HttpServletResponseDemo" />
+        <module name="Listener" />
+        <module name="FilterDemo" />
+        <module name="ServletCookidDemo" />
+        <module name="Redirection" />
+        <module name="ServletContextDemo" />
+        <module name="HttpSessionDemo" />
+        <module name="RequestShareDemo" />
+        <module name="OnlineExamManagementSystem" />
+        <module name="ServletTest" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="demo1" target="1.8" />
+      <module name="FilterDemo" target="1.8" />
+      <module name="HttpServletRequestDemo" target="1.8" />
+      <module name="HttpServletResponseDemo" target="1.8" />
+      <module name="HttpSessionDemo" target="1.8" />
+      <module name="Listener" target="1.8" />
+      <module name="OnlineExamManagementSystem" target="1.8" />
+      <module name="Redirection" target="1.8" />
+      <module name="RequestDispatchForward" target="1.8" />
+      <module name="RequestShareDemo" target="1.8" />
+      <module name="ServletContextDemo" target="1.8" />
+      <module name="ServletCookidDemo" target="1.8" />
+      <module name="ServletTest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

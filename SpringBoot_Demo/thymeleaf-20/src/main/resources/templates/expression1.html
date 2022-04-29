@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Expression 表达式练习页面</h3>
+<center>
+    <h4>
+        这里显示expression1的数据，使用th:text="${}"形式
+        <div>
+            <p th:text="${site12312321}">key不存在</p><br>
+            <p th:text="${site}">site</p><br>
+            <p th:text="${user1}">对象</p><br>
+            <p th:text="${user1.id}">id</p><br>
+            <p th:text="${user1.name}">姓名</p><br>
+            <p th:text="${user1.age}">年龄</p><br>
+            <p th:text="${user1.getAge()}">使用get方法年龄</p>
+        </div>
+    </h4>
+
+</center>
+
+
+</body>
+</html>

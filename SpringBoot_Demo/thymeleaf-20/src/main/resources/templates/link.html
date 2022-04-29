@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<center>
+    <h3>
+        链接表达式 ： @{url}
+        <h4>链接绝对路径</h4>
+        <a th:href="@{http://www.baidu.com}">链接到百度</a>
+        <h4>链接相对路径</h4>
+        <a th:href="@{/tpl/queryAccount}">相对地址，没有参数</a>
+        <h4>链接相对路径，用字符串传递参数</h4>
+        <a th:href="@{'/tpl/queryAccount?id='+${userid}}">相对地址，将参数缝合在url中传输，从model中获取</a>
+    </h3>
+    <!--        字符串拼接的传参方式并不是很推荐,推荐使用一下几种方式-->
+    <h4>使用() 传参数</h4>
+    <a th:href="@{/tpl/queryAccount(id=${userid})}">使用() 传参数></a>
+
+    <h4>使用() 传递多个参数，参数名字要与后端接受的参数名一致</h4>
+    <a th:href="@{/tpl/queryUser(name='lisi',age='20')}">使用() 传多个参数></a>
+
+</center>
+
+</body>
+</html>

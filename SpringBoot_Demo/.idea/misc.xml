@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/package-war-16" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../SpringBoot-001/pom.xml" />
+        <option value="$PROJECT_DIR$/hellospringboot-02/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot-03/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-04-web/pom.xml" />
+        <option value="$PROJECT_DIR$/many_env-05/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_jsp-06/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-applicationcontext-07/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-03/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot-001/pom.xml" />
+        <option value="$PROJECT_DIR$/interceptor-08/pom.xml" />
+        <option value="$PROJECT_DIR$/CommandLineRunner-applicationcontext-07/pom.xml" />
+        <option value="$PROJECT_DIR$/servlet-09/pom.xml" />
+        <option value="$PROJECT_DIR$/filters-10/pom.xml" />
+        <option value="$PROJECT_DIR$/orm-mysql-11/pom.xml" />
+        <option value="$PROJECT_DIR$/transaction-12/pom.xml" />
+        <option value="$PROJECT_DIR$/restful-13/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-14/pom.xml" />
+        <option value="$PROJECT_DIR$/package-war-16/pom.xml" />
+        <option value="$PROJECT_DIR$/thymeleaf-19/pom.xml" />
+        <option value="$PROJECT_DIR$/hellothymeleaf-19/pom.xml" />
+        <option value="$PROJECT_DIR$/thymeleaf-20/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

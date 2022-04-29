@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>属性</title>
+</head>
+<body>
+    <h3> 属性的使用</h3>
+<div>
+    <h3>在html元素的属性之前加上th:</h3>
+<!--    目前情况下，url表达式还是要使用@，-->
+    <form th:action="@{/loginServlet}" th:method="${method}">
+        <input th:type="text" th:name="${userid}">
+        <input type="button" id="btn" th:onclick="btnClick()">
+    </form>
+</div>
+</body>
+
+<script type = "text/javascript">
+    function btnClick(){
+        alert("单机了")
+    }
+</script>
+</html>

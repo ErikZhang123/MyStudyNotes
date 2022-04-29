@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FilterDemo/FilterDemo1.iml" filepath="$PROJECT_DIR$/FilterDemo/FilterDemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HttpServletRequestDemo/HttpServletRequestDemo.iml" filepath="$PROJECT_DIR$/HttpServletRequestDemo/HttpServletRequestDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineExamManagementSystem（菜鸟版）/OnlineExamManagementSystem（菜鸟版）.iml" filepath="$PROJECT_DIR$/OnlineExamManagementSystem（菜鸟版）/OnlineExamManagementSystem（菜鸟版）.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Servlet.iml" filepath="$PROJECT_DIR$/.idea/Servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServletSharedData/ServletSharedData.iml" filepath="$PROJECT_DIR$/ServletSharedData/ServletSharedData.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo2/demo2.iml" filepath="$PROJECT_DIR$/demo2/demo2.iml" />
+    </modules>
+  </component>
+</project>

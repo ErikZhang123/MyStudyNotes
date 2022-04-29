@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.DAO.StudentDAO">
+    <select id="selectStudent" resultType="com.DAO.Student.DAO.Student">
+        select sid,name,balance from StudentBalance;
+    </select>
+
+    <select id="selectStudentByID"
+            parameterType="Integer"
+            resultType="com.DAO.Student.DAO.Student">
+        select sid,sname,balance from StudentBalance where sid = #{id};
+    </select>
+
+    <insert id="insertStudent" parameterType="com.DAO.Student.DAO.Student">
+        insert into student values ( #{sid} , #{name} , #{balance} );
+    </insert>
+
+    <update id="Recharge">
+        update StudentBalance set balance = balance + #{amount} where sid = #{id};
+    </update>
+
+    <update id="Consume">
+        update StudentBalance set balance = balance - #{amount} where sid = #{id};
+    </update>
+</mapper>

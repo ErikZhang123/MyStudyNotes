@@ -1,0 +1,15 @@
+
+
+对象专属流：
+用来将java对象序列化与反序列化
+由于java对象都是存储在内存中的，所以一旦断电则会丢失
+序列化（Serialize）后会将java对象存储到文件中，是将java对象的数据信息分为几个部分，然后保存下来
+反序列化（Deserialize）即将硬盘上的数据重新恢复到内存中，恢复成java对象
+在序列化后悔出现一个java对象文件，但这个文件不能被正常打开。
+
+序列化与反序列化的对象都必须实现Serializable接口，否则会报出异常NotSerializableException
+
+生成序列化版本号：
+File，Setting，Editor,Inspections----->serialization----->在serialable class without 'serialVersionUID'上打钩
+------>apply-----OK---> 在类名上使用ALT + ENTER 可以生成全球唯一编号的UID
+

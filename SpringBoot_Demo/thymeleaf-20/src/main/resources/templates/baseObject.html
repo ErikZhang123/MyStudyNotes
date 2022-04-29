@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div>
+    <h3>内置对象 #request的使用</h3>
+<!--注意，为了不和属性的双引号弄混，这里使用单引号操作-->
+    获取request作用域中的数据<p th:text="${#request.getAttribute('requestData')}"> </p>
+
+    <br>
+    获取通过model添加的数据<p th:text="${#request.getAttribute('name')}"> </p>
+    <br>
+    获取session添加的数据<p th:text="${#request.getSession().getAttribute('SessionData')}"> </p>
+
+    <br>
+    直接使用session获取对象<p th:text="${#session.getAttribute('SessionData')}"> </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+<!--    </settings>-->
+    <typeAliases>
+<!--        一般指定实体类的包名-->
+        <package name="com.Project1.Domain"/>
+    </typeAliases>
+<!--mapper映射文件位置-->
+    <mappers>
+<!--        <package name="mapper文件所在的包名"/>-->
+<!--     使用package的时候注意：
+            1。mapper文件名称与dao接口名必须完全一致，包括大小写
+            2。mapper文件和dao接口必须在同一目录下-->
+        <package name="com.Project1.DAO"/>
+<!--        <mapper resource="????"/>-->
+    </mappers>
+
+
+</configuration>

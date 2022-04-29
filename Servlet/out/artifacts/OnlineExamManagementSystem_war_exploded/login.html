@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #Regist{
+            position: absolute;
+            top:200px;
+            right:50%;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <form action="http://localhost:8080/OEMS_start/oems" method="GET" id="Regist">
+        用户名: <input type="text" name="UNAME" id="username" />
+        </br>
+        密码:   <input type="password" name="UPASSWORD" id="password"/></br>
+        性别:   <input type="radio" name="sex" value="男">男</br>
+               <input type="radio" name="sex" value="女">女</br>
+        邮箱:   <input type="text" name="email" id="email" />
+                <span id="Exception" style="color: brown;"></span>
+        </br>
+               <!-- <input type="button" id="login" value="登陆" /> -->
+               <input type="button" id="regist_blanks" value="注册" />
+               <input type="reset" value="清空"/> 
+               <input type="hidden" name="submittype" id="submittype">        
+         </form>
+         
+    </center>
+
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            var mail=document.getElementById("email");
+            var mailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+            var login = document.getElementById("login");
+            var $regist = $("#regist");
+            
+            var flag = false;
+            mail.onblur=function(){
+                if(mailRegExp.test(mail.value)){
+                    document.getElementById("Exception").innerText="";
+                    flag=true;
+                }
+                else{
+                    document.getElementById("Exception").innerText="邮箱格式错误";
+                }
+            }
+            
+            //注册功能
+            $(":button[id='regist_blanks']").bind("click",registfunc);
+            function registfunc(){
+              if($("#username").val()!=""&&$("#password").val()!=""&&flag){ 
+                //   <!-- 注意，如果要使用form对象的submit方法，那么在form中不能有id，name为submit的标签 -->
+                var reg = document.getElementById("Regist");
+                reg.submit();
+              }
+              else{
+                  alert("注册失败");
+              }
+            };
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyQueueTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Examples</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">MyQueueTest.java</span></div><h1>MyQueueTest.java</h1><pre class="source lang-java linenums">import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+<span class="fc" id="L5">public class MyQueueTest {</span>
+    @Test
+    public  void testConstruct(){
+<span class="fc" id="L8">        MyQueue&lt;String&gt; s = new MyQueue&lt;&gt;(10);</span>
+<span class="fc" id="L9">        assertEquals(s.getDelay(),10);</span>
+<span class="fc" id="L10">        assertEquals(s.size(),0);</span>
+<span class="fc" id="L11">        assertEquals(s.getMaximumDelay(),10);</span>
+<span class="fc" id="L12">        MyQueue&lt;String&gt; s1 = new MyQueue&lt;&gt;(-10);</span>
+<span class="fc" id="L13">        assertEquals(s1.getDelay(),0);</span>
+<span class="fc" id="L14">        assertEquals(s1.getMaximumDelay(),-10);</span>
+<span class="fc" id="L15">        assertEquals(s1.size(),0);</span>
+<span class="fc" id="L16">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L17">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L18">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L19">        assertEquals(s.size(),3);</span>
+<span class="fc" id="L20">        s.enqueue(null);</span>
+<span class="fc" id="L21">        assertEquals(s.size(),4);</span>
+<span class="fc" id="L22">        assertNotEquals(s.size(),5);</span>
+
+<span class="fc" id="L24">    }</span>
+    @Test
+    public  void testPushPeek(){
+<span class="fc" id="L27">        MyQueue&lt;String&gt; s = new MyQueue&lt;&gt;(5);</span>
+<span class="fc" id="L28">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L29">        s.enqueue(&quot;b&quot;);</span>
+<span class="fc" id="L30">        s.enqueue(&quot;c&quot;);</span>
+<span class="fc" id="L31">        assertSame(null,s.dequeue());</span>
+<span class="fc" id="L32">        s.enqueue(null);</span>
+<span class="fc" id="L33">        s.enqueue(&quot;d&quot;);</span>
+<span class="fc" id="L34">        s.enqueue(&quot;e&quot;);</span>
+<span class="fc" id="L35">        assertSame(&quot;a&quot;,s.dequeue());</span>
+<span class="fc" id="L36">        assertSame(&quot;b&quot;,s.dequeue());</span>
+<span class="fc" id="L37">        assertSame(&quot;c&quot;,s.dequeue());</span>
+<span class="fc" id="L38">        s.enqueue(&quot;f&quot;);</span>
+<span class="fc" id="L39">        assertSame(null,s.dequeue());</span>
+<span class="fc" id="L40">    }</span>
+    @Test
+    public  void testPop(){
+<span class="fc" id="L43">        MyQueue&lt;String&gt; s = new MyQueue&lt;&gt;(5);</span>
+<span class="fc" id="L44">        s.enqueue(&quot;ab&quot;);</span>
+<span class="fc" id="L45">        s.enqueue(&quot;c&quot;);</span>
+<span class="fc" id="L46">        s.enqueue(&quot;f&quot;);</span>
+<span class="fc" id="L47">        s.enqueue(&quot;f&quot;);</span>
+<span class="fc" id="L48">        assertEquals(4,s.size());</span>
+<span class="fc" id="L49">        assertSame(s.dequeue(),null);</span>
+<span class="fc" id="L50">        s.enqueue(&quot;f&quot;);</span>
+<span class="fc" id="L51">        assertEquals(5,s.size());</span>
+<span class="fc" id="L52">        assertSame(s.dequeue(),&quot;ab&quot;);</span>
+<span class="fc" id="L53">        assertSame(s.dequeue(),&quot;c&quot;);</span>
+<span class="fc" id="L54">        assertEquals(0,s.getDelay());</span>
+<span class="fc" id="L55">        s.enqueue(&quot;g&quot;);</span>
+<span class="fc" id="L56">        assertSame(s.dequeue(),null);</span>
+<span class="fc" id="L57">        assertEquals(4,s.getDelay());</span>
+<span class="fc" id="L58">        assertEquals(5,s.getMaximumDelay());</span>
+<span class="fc" id="L59">        s.setMaximumDelay(10);</span>
+<span class="fc" id="L60">        assertEquals(10,s.getMaximumDelay());</span>
+<span class="fc" id="L61">        assertEquals(4,s.getDelay());</span>
+<span class="fc" id="L62">        s.enqueue(&quot;k&quot;);</span>
+<span class="fc" id="L63">        assertEquals(3,s.getDelay());</span>
+<span class="fc" id="L64">        s.enqueue(&quot;k&quot;);</span>
+<span class="fc" id="L65">        s.enqueue(&quot;k&quot;);</span>
+<span class="fc" id="L66">        s.enqueue(&quot;k&quot;);</span>
+<span class="fc" id="L67">        s.enqueue(&quot;k&quot;);</span>
+<span class="fc" id="L68">        s.dequeue();</span>
+<span class="fc" id="L69">        assertEquals(0,s.getDelay());</span>
+<span class="fc" id="L70">        MyQueue&lt;String&gt; s2 = new MyQueue&lt;&gt;(0);</span>
+<span class="fc" id="L71">        s2.enqueue(&quot;a&quot;);</span>
+        try{
+<span class="fc" id="L73">            s2.dequeue();</span>
+<span class="nc" id="L74">            s2.dequeue();</span>
+<span class="nc" id="L75">            s2.dequeue();</span>
+<span class="fc" id="L76">        }catch(IllegalStateException e){</span>
+<span class="fc" id="L77">            return;</span>
+<span class="nc" id="L78">        }</span>
+<span class="nc" id="L79">        throw new RuntimeException(&quot;should be exception!&quot;);</span>
+    }
+    @Test
+    public  void testPeek(){
+<span class="fc" id="L83">        MyQueue&lt;String&gt; s = new MyQueue&lt;&gt;(3);</span>
+<span class="fc" id="L84">        s.enqueue(&quot;a1&quot;);</span>
+<span class="fc" id="L85">        assertSame(&quot;a1&quot;,s.peek());</span>
+<span class="fc" id="L86">        assertEquals(s.size(),1);</span>
+<span class="fc" id="L87">        s.enqueue(&quot;a2&quot;);</span>
+<span class="fc" id="L88">        s.enqueue(&quot;a3&quot;);</span>
+<span class="fc" id="L89">        assertEquals(&quot;a1&quot;,s.peek());</span>
+<span class="fc" id="L90">        assertEquals(3,s.size());</span>
+<span class="fc" id="L91">        assertEquals(0,s.getDelay());</span>
+<span class="fc" id="L92">        s.setMaximumDelay(10);</span>
+<span class="fc" id="L93">        assertEquals(0,s.getDelay());</span>
+<span class="fc" id="L94">        assertEquals(10,s.getMaximumDelay());</span>
+<span class="fc" id="L95">        s.enqueue(&quot;b&quot;);</span>
+<span class="fc" id="L96">        assertEquals(0,s.getDelay());</span>
+<span class="fc" id="L97">        MyQueue&lt;String&gt; s2 = new MyQueue&lt;&gt;(15);</span>
+<span class="fc" id="L98">        assertEquals(14,s2.getDelay());</span>
+
+<span class="fc" id="L100">    }</span>
+    @Test
+    public  void testClear(){
+<span class="fc" id="L103">        MyQueue&lt;String&gt; s = new MyQueue&lt;&gt;(3);</span>
+<span class="fc" id="L104">        assertTrue(s.clear());</span>
+<span class="fc" id="L105">        assertFalse(s.check());</span>
+<span class="fc" id="L106">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L107">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L108">        assertFalse(s.clear());</span>
+<span class="fc" id="L109">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L110">        s.dequeue();</span>
+<span class="fc" id="L111">        assertTrue(s.clear());</span>
+<span class="fc" id="L112">        assertEquals(0,s.size());</span>
+<span class="fc" id="L113">        s.setMaximumDelay(10);</span>
+<span class="fc" id="L114">        assertEquals(0,s.getDelay());</span>
+<span class="fc" id="L115">        assertEquals(10,s.getMaximumDelay());</span>
+<span class="fc" id="L116">        s.enqueue(&quot;b&quot;);</span>
+<span class="fc" id="L117">        assertEquals(9,s.getDelay());</span>
+<span class="fc" id="L118">        MyQueue&lt;String&gt; s2 = new MyQueue&lt;&gt;(3);</span>
+        try{
+<span class="nc" id="L120">            s2.peek();</span>
+<span class="fc" id="L121">        }catch (IllegalStateException e){</span>
+<span class="fc" id="L122">            return;</span>
+<span class="nc" id="L123">        }</span>
+<span class="nc" id="L124">    }</span>
+    @Test
+    public  void testContains(){
+<span class="fc" id="L127">        MyQueue&lt;String&gt; s = new MyQueue&lt;&gt;(3);</span>
+<span class="fc" id="L128">        assertFalse(s.contains(null));</span>
+<span class="fc" id="L129">        s.enqueue(&quot;a&quot;);</span>
+<span class="fc" id="L130">        s.enqueue(&quot;b&quot;);</span>
+<span class="fc" id="L131">        assertTrue(s.contains(&quot;b&quot;));</span>
+<span class="fc" id="L132">        s.enqueue(null);</span>
+<span class="fc" id="L133">        assertTrue(s.contains(null));</span>
+<span class="fc" id="L134">        assertFalse(s.contains(&quot;null&quot;));</span>
+<span class="fc" id="L135">    }</span>
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

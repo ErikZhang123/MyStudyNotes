@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HttpWervletRequestDemo:war">
+    <output-path>$PROJECT_DIR$/../HttpServletResponseDemo/HttpWervletRequestDemo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HttpWervletRequestDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="HttpWervletRequestDemo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="HttpWervletRequestDemo:war exploded" />
+    </root>
+  </artifact>
+</component>

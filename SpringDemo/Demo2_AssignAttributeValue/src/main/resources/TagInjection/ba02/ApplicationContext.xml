@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--   基于xml的di赋值
+简单类型：基本类型与String
+方法一：set注入：使用对象的set()方法对其属性进行赋值
+spring会将name的值和"set"进行拼接，然后使用反射机制调用对应的set方法
+1）简单类型的set注入:使用<propertiy name="" value=""/>，一次只能赋一个值
+-->
+<!--
+2)引用数据类型的赋值:
+语法格式：<propertiy name="属性名称" ref="bean的id（对象的名称）"/>
+-->
+
+    <bean id="DAO.Student" class="com.TagInjection.ba02.DAO.Student">
+        <property name="name" value="zhangsan"/>
+        <property name="age" value="18"/>
+
+        <property name="school" ref="School"/>
+    </bean>
+    <bean id="School" class="com.TagInjection.ba02.School">
+        <property name="name" value="USYD"/>
+    </bean>
+</beans>

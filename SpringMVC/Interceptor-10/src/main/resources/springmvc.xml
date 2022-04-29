@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.alibaba.com/schema/stat http://www.alibaba.com/schema/stat.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.Project1.Controllers"/>
+
+<!--    声明拦截器   ： 拦截器可以有0或多个，执行顺序是： 先声明的先执行。
+                    拦截器在框架中保存的结构实际上是一个ArrayList，按照生成的先后顺序放入ArrayList-->
+    <mvc:interceptors>
+
+        <mvc:interceptor>
+<!--            path指的是拦截的请求url地址,一般使用通配符，与静态资源的**意义相同-->
+            <mvc:mapping path="/**"/>
+<!--            声明拦截的请求以后使用哪个拦截器-->
+            <bean class="com.Project1.Interceptor.Interceptor"/>
+        </mvc:interceptor>
+
+<!--声明拦截器2-->
+        <mvc:interceptor>
+            <!--            path指的是拦截的请求url地址,一般使用通配符，与静态资源的**意义相同-->
+            <mvc:mapping path="/**"/>
+            <!--            声明拦截的请求以后使用哪个拦截器-->
+            <bean class="com.Project1.Interceptor.Interceptor2"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+
+    <!--     配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--           设置视图的路径前缀和后缀，这样在controller中只需要指定视图的文件名就可以了-->
+        <!--        框架在Controller中使用setViewName的时候直接写文件名即可-->
+        <property name="prefix" value = "/WEB-INF/views/"/>
+        <property name="suffix" value = ".jsp"/>
+    </bean>
+    <mvc:annotation-driven/>
+</beans>

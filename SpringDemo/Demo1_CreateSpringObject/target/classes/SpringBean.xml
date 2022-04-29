@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+1、xsd文件是spring的约束文件，可以通过将该地址复制到浏览器中，来查阅spring约束文件
+2、bean即是spring中的对java对象
+3、id是自定义的对象名称，class是spring通过反射机制所寻找的类的全限定名称，不可为接口
+4、spring会将创建好的对象储存在一个map中 <id，对象>
+-->
+    <bean id="service01" class="Service.Service01"/>
+    <bean id="myDate" class="java.util.Date"/>
+</beans>

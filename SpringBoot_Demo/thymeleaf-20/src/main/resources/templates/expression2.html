@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Expression 表达式练习页面2 </h3>
+<center>
+    <h4>
+        这里显示expression2的数据，使用th:object="*{}"形式
+        <div th:object="${user2}">
+
+            <p th:text="*{id}">id</p><br>
+            <p th:text="*{name}">姓名</p><br>
+            <p th:text="*{age}">年龄</p><br>
+
+        </div>
+    </h4>
+
+    <h4>
+        也可以使用*{} 来完整获取对象属性
+        <p th:text="*{user2.id}">*{} 来完整获取对象id</p>
+    </h4>
+
+</center>
+
+</body>
+</html>

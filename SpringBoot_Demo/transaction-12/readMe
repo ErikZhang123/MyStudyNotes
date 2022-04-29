@@ -1,0 +1,35 @@
+SrpingBoot框架中的事务(事务实现在myServiceImp中
+)
+
+1） 业务方法Service实现类上加上 @Transaction ， 加入注解以后，让方法有事务功能
+
+2）在主启动类上面 加入 @EnableTransactionManager
+
+3）
+<!--            mybatis代码自动生成插件-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+<!--                    指定配置文件，放在项目的根目录之下，与src平级-->
+                    <configurationFile>GeneratorMapper.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+4） 本模块使用了Mybatis逆向工程，配置文件信息在GEneratorMapper中查看
+--            mybatis代码自动生成插件-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+<!--                    指定配置文件，放在项目的根目录之下-->
+                    <configurationFile>GeneratorMapper.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+
+

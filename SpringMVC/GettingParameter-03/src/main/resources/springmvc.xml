@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.my_project.Controllers"/>
+    <!--     配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--           设置视图的路径前缀和后缀，这样在controller中只需要指定视图的文件名就可以了-->
+        <!--        框架在Controller中使用setViewName的时候直接写文件名即可-->
+        <property name="prefix" value = "/WEB-INF/view/"/>
+        <property name="suffix" value = ".jsp"/>
+    </bean>
+<!--    注意，在写的时候需要保证添加的地址是http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">-->
+    <mvc:annotation-driven/>
+</beans>

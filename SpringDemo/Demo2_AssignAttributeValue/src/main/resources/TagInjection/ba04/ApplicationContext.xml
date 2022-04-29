@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--引用类型的自动注入：
+1、使用byName规则注入（按名称注入）：
+spring会将配置文件中bean的id与java引用类型属性的名称完全一致的bean，注入到属性中。
+-->
+    <bean id="DAO.Student" class="com.TagInjection.ba04.Student" autowire="byName">
+      <property name="name" value="zhangsan"/>
+        <property name="age" value = "18"/>
+<!--        当使用了自动注入以后，再对属性进行赋值，spring会用手动赋值的内容覆盖掉自动注入的内容。 -->
+<!--        <property name="school" ref = "School2"/>-->
+    </bean>
+
+<!--
+2、使用byType规则注入:spring会比较java的形参数据类型与class的同源关系：
+    1、java类的属性的数据类型与class中的类型完全一致
+    2、java类的属性的数据类型与class中的类型为父子关系（属性为父类，class中的类型为子类）
+    3、java类的属性的数据类型与class中的类型为接口与实现类的关系（属性为接口，class中为实现类）
+   -->
+    <bean id="Student2" class="com.TagInjection.ba04.Student" autowire="byType">
+       <property name="name" value="lisi"/>
+        <property name="age" value="18"/>
+    </bean>
+
+    <bean id="school" class="com.TagInjection.ba04.School">
+        <property name="name" value="USYD"/>
+    </bean>
+
+<!--    <bean id="school2" class="com.ba04.Building">-->
+<!--    如果byType规则找到多个符合的引用对象，则会报错NoUniqueBeanDefinitionException-->
+<!--    </bean>-->
+<!--    此时，Student中school的类型是Building，是School的父类.
+        dinnerHouse的类型是Eat接口，Spring会将school和dinnerHouse都赋值成USYD
+-->
+
+</beans>
